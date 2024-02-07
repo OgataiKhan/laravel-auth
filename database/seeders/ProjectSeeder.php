@@ -6,6 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
+use Carbon\Carbon;
 
 class ProjectSeeder extends Seeder
 {
@@ -22,6 +23,8 @@ class ProjectSeeder extends Seeder
                 'technologies' => 'Laravel, Vue.js, Bootstrap',
                 'url' => 'https://exampleportfolio.com',
                 'image_url' => 'https://example.com/images/portfolio1.jpg',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
             ],
             [
                 'title' => 'SAMPLE E-commerce Platform',
@@ -30,6 +33,8 @@ class ProjectSeeder extends Seeder
                 'technologies' => 'Laravel, Bootstrap, MySQL',
                 'url' => 'https://exampleshop.com',
                 'image_url' => 'https://example.com/images/shop.jpg',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
             ],
             [
                 'title' => 'SAMPLE Task Management System',
@@ -38,6 +43,8 @@ class ProjectSeeder extends Seeder
                 'technologies' => 'Laravel, Vue.js',
                 'url' => 'https://exampletasks.com',
                 'image_url' => 'https://example.com/images/tasks.jpg',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
             ]
         ]);
     }
