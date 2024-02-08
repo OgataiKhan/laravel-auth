@@ -2,10 +2,11 @@
 
 @section('content')
     <div class="container pt-4">
-        <div class="mb-2">
+        <header class="mb-2">
+            <h1>Projects list</h1>
             <a rel="stylesheet" href="{{ route('admin.projects.create') }}" role="button" class="btn btn-primary">Create new
                 project</a>
-        </div>
+        </header>
         <table class="table">
             <thead>
                 <tr>
@@ -25,7 +26,12 @@
                             <a rel="stylesheet" href="{{ route('admin.projects.show', $project) }}" role="button"
                                 class="btn btn-info btn-sm">show</a>
                             <a rel="stylesheet" href="" role="button" class="btn btn-primary btn-sm">edit</a>
-                            <a rel="stylesheet" href="" role="button" class="btn btn-danger btn-sm">delete</a>
+                            <form action="{{ route('admin.projects.destroy', $project) }}" method="POST"
+                                style="display: inline;">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger btn-sm">delete</button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach

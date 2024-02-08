@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
     <div class="container mt-5">
@@ -7,7 +7,7 @@
             @csrf
             <div class="form-group mb-3">
                 <label for="title">Title</label>
-                <input type="text" class="form-control" id="title" name="title">
+                <input type="text" class="form-control" id="title" name="title" required>
             </div>
             <div class="form-group mb-3">
                 <label for="description">Description</label>
