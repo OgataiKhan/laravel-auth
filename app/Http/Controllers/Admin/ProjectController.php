@@ -35,11 +35,11 @@ class ProjectController extends Controller
         $data = $request->validated();
 
         $data['slug'] = Str::slug($request->title);
-    
+
         $project = new Project();
         $project->fill($data);
         $project->save();
-    
+
         return redirect()->route('admin.projects.index');
     }
 
@@ -48,7 +48,8 @@ class ProjectController extends Controller
      */
     public function show(Project $project)
     {
-        //
+        //$project = Project::where('slug', $slug)->first();
+        dd($project);
     }
 
     /**
