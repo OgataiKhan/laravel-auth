@@ -8,9 +8,6 @@
                 project</a>
         </header>
         @if (session('message'))
-            {{-- <div class="alert alert-success" role="alert">
-                {{ session('message') }}
-            </div> --}}
             <div class="toast-container position-fixed bottom-0 end-0 p-3">
                 <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
                     <div class="toast-header">
