@@ -3,6 +3,15 @@
 @section('content')
     <div class="container mt-5">
         <h1>Add New Project</h1>
+        @if ($errors->any())
+            <div class="alert alert-danger" role="alert">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <form action="{{ route('admin.projects.store') }}" method="POST">
             @csrf
             <div class="form-group mb-3">
@@ -15,7 +24,8 @@
             </div>
             <div class="form-group mb-3">
                 <label for="technologies">Technologies</label>
-                <input type="text" class="form-control" id="technologies" name="technologies" value="{{ old('technologies') }}">
+                <input type="text" class="form-control" id="technologies" name="technologies"
+                    value="{{ old('technologies') }}">
             </div>
             <div class="form-group mb-3">
                 <label for="url">Project URL</label>
