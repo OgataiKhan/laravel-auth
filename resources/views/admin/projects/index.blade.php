@@ -38,7 +38,7 @@
                         <td>
                             <a rel="stylesheet" href="{{ route('admin.projects.show', $project) }}" role="button"
                                 class="btn btn-info btn-sm">show</a>
-                            <a rel="stylesheet" href="" role="button" class="btn btn-primary btn-sm">edit</a>
+                            <a rel="stylesheet" href="{{ route('admin.projects.edit', $project) }}" role="button" class="btn btn-primary btn-sm">edit</a>
                             <form action="{{ route('admin.projects.destroy', $project) }}" method="POST"
                                 style="display: inline;">
                                 @csrf

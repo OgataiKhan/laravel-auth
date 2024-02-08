@@ -40,7 +40,7 @@ class ProjectController extends Controller
         $project->fill($data);
         $project->save();
 
-        return redirect()->route('admin.projects.index')->with('message', "Project $project->title created successfully!" );
+        return redirect()->route('admin.projects.index')->with('message', "Project $project->title created successfully!");
     }
 
     /**
@@ -56,7 +56,7 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        //
+        return view('admin.projects.edit', compact('project'));
     }
 
     /**
@@ -64,7 +64,11 @@ class ProjectController extends Controller
      */
     public function update(UpdateProjectRequest $request, Project $project)
     {
-        //
+        $data = $request->validated();
+
+        $project->update($data);
+
+        return redirect()->route('admin.projects.index')->with('message', "Project $project->title updated successfully!");
     }
 
     /**
