@@ -2,6 +2,10 @@
 
 @section('content')
     <div class="container pt-4">
+        <div class="mb-2">
+            <a rel="stylesheet" href="{{ route('admin.projects.create') }}" role="button" class="btn btn-primary">Create new
+                project</a>
+        </div>
         <table class="table">
             <thead>
                 <tr>
@@ -18,9 +22,10 @@
                         <td>{{ $project->title }}</td>
                         <td>{{ $project->slug }}</td>
                         <td>
-                          <a rel="stylesheet" href="{{ route('admin.projects.show', $project) }}" role="button" class="btn btn-info btn-sm">show</a>
-                          <a rel="stylesheet" href="" role="button" class="btn btn-primary btn-sm">edit</a>
-                          <a rel="stylesheet" href="" role="button" class="btn btn-danger btn-sm">delete</a>
+                            <a rel="stylesheet" href="{{ route('admin.projects.show', $project) }}" role="button"
+                                class="btn btn-info btn-sm">show</a>
+                            <a rel="stylesheet" href="" role="button" class="btn btn-primary btn-sm">edit</a>
+                            <a rel="stylesheet" href="" role="button" class="btn btn-danger btn-sm">delete</a>
                         </td>
                     </tr>
                 @endforeach
